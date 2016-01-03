@@ -1,0 +1,73 @@
+<?php
+/**
+ * @file
+ * Main bootstrap file of the lifebook_responsive module.
+ */
+
+function lifebook_responsive_css_alter(&$css){
+
+	if ( _isMobile() ) {
+		
+		unset($css['sites/all/modules/panels/plugins/layouts/twocol_bricks/twocol_bricks.css']);
+		unset($css['sites/all/themes/omega/alpha/css/alpha-reset.css']);
+		unset($css['sites/default/themes/lifebook/css/lifebook-alpha-default.css']);
+		unset($css['sites/all/themes/omega/alpha/css/grid/alpha_default/normal/alpha-default-normal-12.css']);
+		unset($css['sites/all/themes/omega/omega/css/omega-text.css']);
+		unset($css['sites/all/themes/omega/omega/css/omega-menu.css']);
+		unset($css['sites/all/themes/omega/omega/css/omega-forms.css']);
+        //~ dpm($css);
+		return $css;
+	}
+}
+function lifebook_responsive_page_alter(&$page){
+	if ( _isMobile() ) {
+				
+				
+	}
+	
+}
+function lifebook_responsive_module_implements_alter(&$implementations, $hook){
+    // make this module form alter run last..( after biblio)
+    //~ if ( ($hook == 'css_alter' && isset($implementations['lifebook_responsive'])) ||($hook == 'form_alter' && isset($implementations['lifebook_responsive'])) || ($hook == 'menu_alter' && isset($implementations['lifebook_responsive']))) {
+    if( isset($implementations['lifebook_responsive']) ) {
+
+		 
+        $var = $implementations['lifebook_responsive'];
+        unset($implementations['lifebook_responsive']);
+        $implementations['lifebook_responsive'] = $var;
+//~ dpm($implementations);
+    }
+}
+function lifebook_responsive_custom_theme() {
+
+   return 'stark';
+}
+function _isMobile(){
+	
+	if(!isset($_GLOBALS["isMobile"]) ) {
+		//~ require_once('vendor/mobiledetect/mobiledetectlib/Mobile_Detect.php');
+		$_GLOBALS["isMobile"] =  new Mobile_Detect;
+	}
+	//~ if($_GLOBALS["isMobile"]->isMobile()){
+	//~ }
+	//~ dpm($_GLOBALS["isMobile"]->isMobile());
+	return $_GLOBALS["isMobile"]->isMobile();
+}
+
+function lifebook_responsive_init(){
+	if ( _isMobile() ) {
+		unset($GLOBALS['theme']);
+  drupal_theme_initialize();
+		drupal_add_js(drupal_get_path("module", "lifebook_responsive").'/js/index.js');
+		drupal_add_css(drupal_get_path("module", "lifebook_responsive").'/css/index.css', 
+			array(	'group' => 0,
+					'every_page' => true,
+					'weight' => 10) ); 
+	}
+}
+function lifebook_responsive_preprocess_image(&$variables) {	
+	if ( _isMobile() ) {
+		unset($variables['width']);
+		unset($variables['height']);
+	}
+}

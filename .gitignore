@@ -1,0 +1,31 @@
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+
+sites/all/modules/*
+!sites/all/modules/lifebook_responsive
+
+sites/all/libraries
+
+sites/default/themes/*
+!sites/default/themes/mobile
+
+sites/default/files
+sites/all/themes
+/modules
+/themes
+/includes
+/misc
+/scripts
+/test
+/M-PHOTO
+/print
+/profiles
+/*.txt
+/*.php
+/*.html
+sites/default/default.settings.php
+sites/default/modules
+sites/example.sites.php
+sites/all/README.txt

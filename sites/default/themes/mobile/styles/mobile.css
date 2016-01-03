@@ -1,0 +1,24 @@
+/* Front Page */
+body {width: 90%;margin: 0 auto;}
+#block-block-7 {float: left;width: 54%;margin-top: 10px;}
+#block-block-7 p {margin: 0;direction: ltr;}
+#block-block-6 {overflow: hidden;width: 43%;background-color: #ddd8c4;padding: 7px;font-family: arial;font-size: small;}
+#block-block-6 h2 {margin: 0;font-size: 16px;text-align: center;}
+#block-block-6 .form-item {margin: 0;}
+#block-block-6 form .form-actions {position: static;}
+#block-block-6 form .form-item input {border: 1px solid !important;border-radius: 5px;padding: 3px;background-color: #ddd8c4 !important;}
+
+
+#block-menu-menu-top-links-mobile {overflow: hidden;top: -6em;width: 54%;float: left;position: relative;}
+#block-menu-menu-top-links-mobile ul.menu {overflow: hidden;padding: 0;margin: 0;}
+#block-menu-menu-top-links-mobile ul.menu li {float: left;display: block;padding: 0;margin: 0 6% 6% 0;width: 36%;}
+#block-menu-menu-top-links-mobile ul.menu li.last {margin-right: 0 !important;}
+#block-menu-menu-top-links-mobile ul.menu li a {display: inline-block;text-indent: -9999px;background-repeat: no-repeat;background-position: center center;}
+#block-menu-menu-top-links-mobile ul.menu li a.bid {background-image: url('../images/bid_m.png');width: 133px;height: 33px;}
+#block-menu-menu-top-links-mobile ul.menu li a.phone {background-image: url('../images/phone_m.png');width: 83px;height: 33px;}
+#block-menu-menu-top-links-mobile ul.menu li a.passport {background-image: url('../images/passport_m.png');width: 150px;height: 40px;}
+#block-menu-menu-top-links-mobile ul.menu li a.mail {background-image: url('../images/mail_m.png');width: 83px;height: 33px;}
+
+
+
+
