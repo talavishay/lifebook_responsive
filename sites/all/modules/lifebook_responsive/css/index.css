@@ -5,7 +5,7 @@ html,body {
 background-image : none !important;
     font-size: 1em ;
   margin: 0px;
-  
+font-family: arial,Arial !important;  
   background-color:#F3E9D0;
 }
 .pane-title,
@@ -15,6 +15,7 @@ background-image : none !important;
     background-size : 100% 100% !important;
     text-align: center;
     color: #4B4B4B;
+padding: 4% 6%;
 }
 img{
 	max-width : 100%;
@@ -401,8 +402,8 @@ position:relative ;
     /* margin-left: 25px; */
     position: absolute;
     z-index: 10;
-    left: 10px;
-    bottom: 10px;
+    left: 16px;
+    bottom: 20px;
    }
 .view-id-front_slideshow .views-slideshow-pager-field-item {
       display: inline-block;
