@@ -20,9 +20,16 @@ sites/all/themes
 /scripts
 /test
 /M-PHOTO
+/cess
 /print
 /profiles
+/error_log
+/.*
+/*.jpg
+/*.svg
+/*.png
 /*.txt
+/*.shtml
 /*.php
 /*.html
 sites/default/default.settings.php
