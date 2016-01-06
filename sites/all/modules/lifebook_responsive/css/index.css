@@ -1,5 +1,7 @@
 #wrapper {
 padding: 0 2%;
+  	max-width: 100%;
+	overflow: hidden;
 }
 html,body {
 background-image : none !important;
@@ -22,15 +24,21 @@ img{
 	height : auto !important;
 }
 input[type=submit]{
-    font-size: 2em  !important;
+max-width: 100%;
 }
 .form-text,
 	input[type=text]{
-	min-width : 100%;
+	width : 97%;
+    
 	min-height: 3em;
+
+  }
+
+select{
+  width: 100%;
 }
-.webform-container-inline label{
-  margin-right: 0px;
+label{
+  margin-right: 0px !important;
 }
 #page{
   margin-top: 10px !important;
