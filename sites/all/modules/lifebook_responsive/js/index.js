@@ -1,7 +1,5 @@
-jQuery(document).ready(function(){
-	
-	/*
-	 * //:FIXME  domain bouned links..
+jQuery(document).ready(function(){	
+	/*	 * //:FIXME  domain bouned links..
 	 * */
 	jQuery('a[href*=lifebook.co.il]').each(function(i, val){
 		jQuery(val).attr("target", "_self");		
@@ -9,68 +7,68 @@ jQuery(document).ready(function(){
 		val.attributes.target = "_self";
 	});
 	
-	/*
-	 *  mobile menu
+	/*	 *  mobile menu
 	 */
 	var d = jQuery('<div class="mobileMenu" style="display:none"/>');
 	jQuery('#block-system-main-menu .content >  .menu > li > a').each(function(i, val){		
-		d.append(jQuery(val).clone());
+		d.prepend(jQuery(val).clone());
 	});
+	var body = jQuery('body');
 	
 	jQuery('body').append(d);
 	
-/*
- * 	mobileHeader
- */
-function mobileMenu(){							
-	jQuery(".mobileMenu")
-		.css("top", jQuery('#wrapper').offset().top+"px")
-		.toggle("slow");
-	setTimeout(function(){jQuery(".mobileMenu").hide("slow");},10000);
-}
-var body = jQuery('body');body.hasClass("front")
-body.prepend(
-		jQuery('<div  id="mobileHeader" />')
+	if(body.hasClass("front")){
+		var h = jQuery('<div class="buttons"><a class="passport" 	href="/node/add/passport">להורדת תמונת פספורט</a><a class="ubookLogin" href="#ubook_login">כניסה למערכת ספר מחזור</a><a class="getQuote" 	href="/node/155">קבלו הצעת מחיר אטרקטיבית</a></div>');
+		
+		body.prepend(h);
+		jQuery(".ubookLogin", body).bind("click", _ubookLogin);
+	}
+	body
+		.prepend(	jQuery('<div  id="mobileHeader" />')
 			.prepend(  jQuery('<span class="menuBtn "  >').bind("click", mobileMenu))
 			.prepend(	  jQuery('<span  class="contactBtn"  />'))
 			.prepend(  jQuery('<span  class="logoBtn "  >'))
 	);
 
-if(body.hasClass("front")){
-	var bl = jQuery("#block-block-1");
-	body.append( jQuery('tbody tr:first-child > td:first-child  p' , bl).clone().addClass("mobileInfo").attr("style", ""));
-	bl.remove();
-	setTimeout(_fix_slideshow,250);
-}
 
-jQuery('.view-id-front_slideshow .views-field-field-link-image img').each(function(i, val){
-	jQuery(val).attr("width", "");
-});
-//~ _fix_slideshow();
 
-//~ jQuery(window).on("resize", _fix_slideshow);
-if(body.hasClass("front")){
-jQuery(window).resize(function () { 
-	waitForFinalEvent(function(){ 
-		//~ alert('Resize...'); 
-		_fix_slideshow();
-		window.title = "";
-		}, 10, "some unique string"); 
-}); 
-}
-/*
- * remove empty p tags from slide show body content ..
- * 
- */
-var t = jQuery('.views-field-field-body p');
-t.each(function() {
-    if ( '' === jQuery.trim( jQuery( this ).text() ) ) {
-      jQuery( this ).remove();
-    }
-});
-if(typeof t.replace == "function"){
-	t.html(t.replace(/<p><\/p>/g, ''));
-}
+
+	if(body.hasClass("front")){
+		var bl = jQuery("#block-block-1");
+		body.append( jQuery('tbody tr:first-child > td:first-child  p' , bl).clone().addClass("mobileInfo").attr("style", ""));
+		bl.remove();
+		
+		setTimeout(_fix_slideshow,250);
+	}
+
+	jQuery('.view-id-front_slideshow .views-field-field-link-image img').each(function(i, val){
+		jQuery(val).attr("width", "");
+	});
+	
+
+	//~ jQuery(window).on("resize", _fix_slideshow);
+	if(body.hasClass("front")){
+	jQuery(window).resize(function () { 
+		waitForFinalEvent(function(){ 
+			//~ alert('Resize...'); 
+			_fix_slideshow();
+			window.title = "";
+			}, 10, "some unique string"); 
+	}); 
+	}
+	/*
+	 * remove empty p tags from slide show body content ..
+	 * 
+	 */
+	//~ var t = jQuery('.views-field-field-body p');
+	//~ t.each(function() {
+		//~ if ( '' === jQuery.trim( jQuery( this ).text() ) ) {
+		  //~ jQuery( this ).remove();
+		//~ }
+	//~ });
+	//~ if(typeof t.replace == "function"){
+		//~ t.html(t.replace(/<p><\/p>/g, ''));
+	//~ }
 });
 
 var waitForFinalEvent = (function () { 
@@ -140,3 +138,20 @@ function _fix_slideshow(){
 
 //~ setTimeout(_fix_slideshow,550);
 //~ setTimeout(_fix_slideshow,1550);
+/*
+ * 	mobileHeader
+ */
+function mobileMenu(){							
+	jQuery(".mobileMenu")
+		.css("top", jQuery('#wrapper').offset().top+"px")
+		.toggle("slow");
+	setTimeout(function(){jQuery(".mobileMenu").hide("slow");},10000);
+}
+
+function _ubookLogin(e){
+	var b = jQuery("#block-block-6");
+	if(!b.hasClass("fixed")){
+		jQuery(".buttons").after(	b.addClass("fixed").hide());
+	}
+	b.toggle();
+}

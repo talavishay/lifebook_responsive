@@ -78,6 +78,9 @@ a#main-content,
 .panel-2col-bricks .panel-col-first .inside{
   margin: 0px;
 }
+.front .pane-title{
+  display: none;
+}
 .view-id-front_slideshow .views-field-field-body,
 .view-id-front_slideshow .views-field-field-link-image {
 /*
@@ -297,6 +300,41 @@ width: 100%;
 	width: auto;
 	text-align: center;
 }
+.buttons {
+  margin-top: 1.2em;
+  margin-bottom: 1em;
+/*  margin-right: 2%;
+   text-align:justify; */
+  font-size: 1.2em;
+/*   font-weight : bold; */
+    
+}
+  
+.buttons a{
+  min-height: 29px !important;;
+  padding: 3% 2.6%;
+  margin: 0px 2%;
+  color : black;
+  text-decoration: none;
+  text-align: center;
+  background-color: #34be2f;
+  vertical-align : middle;
+  display: inline-block !important;;
+  width:24%;
+  transition-duration: 3s;
+}
+.buttons a:active{
+  transition-duration: .1s;
+  background-color: yellow;
+}
+a.getQuote{
+  background-color: #009fe3 !important;;
+}
+a.passport{
+  background-color: #f28c00 !important;;
+}
+
+
 .mobileMenu{
 z-index : 99;
   position: fixed;
@@ -458,3 +496,7 @@ position:relative ;
 #views_slideshow_pager_field_item_bottom_front_slideshow-block_4.active {
   background: url("images/5-active.png") no-repeat scroll 0 0 transparent;
   width: 12px; }
+.field-name-field-gal-second-title{
+	text-align : center;
+	font-size:1.3em;
+}
