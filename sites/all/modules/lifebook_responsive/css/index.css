@@ -592,5 +592,6 @@ margin-bottom: 0px ;
 
 /* Contact page*/
 #node-184 .field-name-body p {
-  margin-right: unset !important;
+  margin-right: 0px !important;
+  max-width: 100%;
 }
