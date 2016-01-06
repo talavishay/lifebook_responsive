@@ -26,15 +26,18 @@ img{
 input[type=submit]{
 max-width: 100%;
 }
+label{
+  font-size:.8em; 
+}
 .form-text,
 	input[type=text]{
 	width : 97%;
-    
-	min-height: 3em;
-
-  }
-
-select{
+	min-height: 2em;
+}
+select option{
+  min-height: 2em;
+}
+select {
   width: 100%;
 }
 label{
