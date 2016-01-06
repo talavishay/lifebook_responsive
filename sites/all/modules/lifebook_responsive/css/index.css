@@ -28,6 +28,11 @@ input[type="checkbox"] {
 /* 	min-width: 2em; */
 	background: red !important;
 	display: inline-block;
+	-ms-transform: scale(2 );
+-webkit-transform: scale(2 );
+-moz-transform: scale(2 );
+-o-transform: scale(2 );
+transform: scale(2 );
 	transform: scale(2 ) ;
 /*   margin: 0 7px 5px; */
 }
