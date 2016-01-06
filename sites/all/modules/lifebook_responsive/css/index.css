@@ -46,7 +46,7 @@ margin-right : 0px !important;
 }
 .form-text,
  	input[type=text] {
-	width : 99%;
+	width : 98%;
     margin: 0 auto;
 	min-height: 1.6em;
 }
@@ -590,3 +590,7 @@ margin-bottom: 0px ;
   
 }
 
+/* Contact page*/
+#node-184 .field-name-body p {
+  margin-right: unset !important;
+}
