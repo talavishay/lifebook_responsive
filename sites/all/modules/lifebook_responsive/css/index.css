@@ -571,10 +571,11 @@ margin-bottom: 0px ;
   display: inline-block;
 }
 #block-block-6 .form-submit{
-  border-radius: 0px;
+  border-radius: 0px !important;;
   font-size: 1.2em;;
   padding: .12em .42em;
   color: white;
+  background-image: unset;
   background-color: #8b4b30;
   border: unset;
 }
