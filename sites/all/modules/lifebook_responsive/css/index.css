@@ -26,10 +26,10 @@ img{
 input[type="checkbox"] {
 /* 	min-height: 3em; */
 /* 	min-width: 2em; */
-	background: red !important;
+/*	background: red !important;*/
 	display: inline-block;
 	-ms-transform: scale(2 );
--webkit-transform: scale(2 );
+-webkit-transform: scale(2 ) translateX(-10px);
 -moz-transform: scale(2 );
 -o-transform: scale(2 );
 transform: scale(2 );
