@@ -9,11 +9,13 @@ jQuery(document).ready(function(){
 	
 	/*	 *  mobile menu
 	 */
+	var body = jQuery('body');
 	var d = jQuery('<div class="mobileMenu" style="display:none"/>');
 	jQuery('#block-system-main-menu .content >  .menu > li > a').each(function(i, val){		
 		d.prepend(jQuery(val).clone());
 	});
-	var body = jQuery('body');
+	
+	d.children().last().before(jQuery('<a href="/contact">יצירת קשר</a>'));
 	
 	jQuery('body').append(d);
 	
@@ -21,13 +23,28 @@ jQuery(document).ready(function(){
 		var h = jQuery('<div class="buttons"><a class="passport" 	href="/node/add/passport">להורדת תמונת פספורט</a><a class="ubookLogin" href="#ubook_login">כניסה למערכת ספר מחזור</a><a class="getQuote" 	href="/node/155">קבלו הצעת מחיר אטרקטיבית</a></div>');
 		
 		body.prepend(h);
+		
+		/*   UBOOK Login*/
+		jQuery("#block-block-6 #user-login > div:nth-of-type(3)").remove();
 		jQuery(".ubookLogin", body).bind("click", _ubookLogin);
+		
+		
+		/*fix height*/
+		var bh = jQuery("body > .buttons").height();
+		setTimeout(function(){
+		
+			jQuery(".buttons a").each(function(i,v){
+				jQuery(v).css("min-height", bh+"px");
+			});
+		},2000);
 	}
 	body
 		.prepend(	jQuery('<div  id="mobileHeader" />')
 			.prepend(  jQuery('<span class="menuBtn "  >').bind("click", mobileMenu))
-			.prepend(	  jQuery('<span  class="contactBtn"  />'))
-			.prepend(  jQuery('<span  class="logoBtn "  >'))
+			.prepend(	  jQuery('<span  class="contactBtn"><div>050-3844349</div><div>info@lifebook.co.il</div></span>'))
+			.prepend(  jQuery('<span  class="logoBtn "  >').bind("click", function(){
+					window.open('/','_self');
+				}))
 	);
 
 
@@ -143,7 +160,7 @@ function _fix_slideshow(){
  */
 function mobileMenu(){							
 	jQuery(".mobileMenu")
-		.css("top", jQuery('#wrapper').offset().top+"px")
+		.css("top", jQuery('#mobileHeader').height()+"px")
 		.toggle("slow");
 	setTimeout(function(){jQuery(".mobileMenu").hide("slow");},10000);
 }
@@ -153,5 +170,5 @@ function _ubookLogin(e){
 	if(!b.hasClass("fixed")){
 		jQuery(".buttons").after(	b.addClass("fixed").hide());
 	}
-	b.toggle();
+	b.toggle("fast");
 }
